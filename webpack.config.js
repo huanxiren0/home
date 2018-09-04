@@ -3,17 +3,27 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const publicPath = '/';
+const getHTMLplugin = (name)=>({
+        template:'./src/view/'+name+'.html',
+        filename:name+'.html',
+        inject:true,
+        chunks:['common',name]
+    });
 
 //导出配置
 module.exports = {
 	//模式
 	mode:'development',
 	//指定入口文件
-	entry:'./src/index.js',	
+	entry:{
+    common:'./src/pages/common/index.js',
+    index:'./src/pages/index/index.js',
+    login:'./src/pages/login/index.js',
+  },
 	//指定出口
 	output:{
 		//出口文件名称
-		filename:'bundle.js',
+		filename:'js/[name].js',
 		//出口文件存储路径
 		path:path.resolve(__dirname,'dist'),
     publicPath:publicPath,
@@ -23,8 +33,12 @@ module.exports = {
     alias: {
       util: path.resolve(__dirname, './src/util/'),
       api: path.resolve(__dirname, './src/api/'),
-      common:path.resolve(__dirname, './src/common/')
+      common:path.resolve(__dirname, './src/common/'),
+      pages:path.resolve(__dirname,'./src/pages')
     }
+  },
+  externals: {
+    jquery: 'window.jQuery'
   },
 	//配置loader
   module: {
@@ -75,15 +89,11 @@ module.exports = {
     ]
   },
   plugins: [
-  	new HtmlWebpackPlugin({
-  		template:'./src/index.html',
-  		filename:'index.html',
-  		inject:true,
-  		// hash:true
-  	}),
+  	new HtmlWebpackPlugin(getHTMLplugin('index')),
+    new HtmlWebpackPlugin(getHTMLplugin('login')),
   	new CleanWebpackPlugin(['dist']),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "css/[name].css",
     })
   ],
   devServer: {
