@@ -1,0 +1,16 @@
+.nav{
+	background:#fff;
+}
+.nav .container{
+	width:1226px;
+	margin: 0 auto;
+}
+.nav .user{
+	float: left;
+}
+.nav .nav-list{
+	float: right;
+}
+.nav .nav-list li{
+	list-style:none;
+}

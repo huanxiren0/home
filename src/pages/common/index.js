@@ -1,2 +1,2 @@
 require('./index.css');
-console.log('common>>>>>');
+require('node_modules/font-awesome/css/font-awesome.min.css');

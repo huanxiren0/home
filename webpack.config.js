@@ -32,8 +32,8 @@ module.exports = {
   resolve: {
     alias: {
       util: path.resolve(__dirname, './src/util/'),
-      api: path.resolve(__dirname, './src/api/'),
-      common:path.resolve(__dirname, './src/common/'),
+      node_modules: path.resolve(__dirname, './node_modules'),
+      common:path.resolve(__dirname, './src/pages/common/'),
       pages:path.resolve(__dirname,'./src/pages')
     }
   },
@@ -57,10 +57,15 @@ module.exports = {
       },
       //处理图片loader
 	    {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|woff2|eot|ttf|otf|svg|woff)\??.*$/,
         use: [
           {
-            loader: 'url-loader'
+            loader: 'url-loader',
+            options: {
+              limit:100,
+              name: "resource/[name].[ext]"
+                        
+            }
           }
         ]
     	},
@@ -77,15 +82,8 @@ module.exports = {
                 ]                
             }
         }               
-      },
-      {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-         use: [
-          {
-            loader: 'url-loader'
-          }
-        ]
-      }             
+      }
+             
     ]
   },
   plugins: [
@@ -99,6 +97,11 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     port:3001,
-    historyApiFallback:true
+    proxy: {
+      '/user': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true
+      }
+    }
   }
 };
