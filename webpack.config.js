@@ -3,9 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const publicPath = '/';
-const getHTMLplugin = (name)=>({
+const getHTMLplugin = (name,title)=>({
         template:'./src/view/'+name+'.html',
         filename:name+'.html',
+        title:title,
         inject:true,
         chunks:['common',name]
     });
@@ -19,6 +20,9 @@ module.exports = {
     common:'./src/pages/common/index.js',
     index:'./src/pages/index/index.js',
     login:'./src/pages/login/index.js',
+    register:'./src/pages/register/index.js',
+    'user-center':'./src/pages/usercenter/index.js',
+    'user-updatepassword':'./src/pages/user-updatepassword/index.js'
   },
 	//指定出口
 	output:{
@@ -87,8 +91,11 @@ module.exports = {
     ]
   },
   plugins: [
-  	new HtmlWebpackPlugin(getHTMLplugin('index')),
-    new HtmlWebpackPlugin(getHTMLplugin('login')),
+  	new HtmlWebpackPlugin(getHTMLplugin('index','首页')),
+    new HtmlWebpackPlugin(getHTMLplugin('login','用户登录')),
+    new HtmlWebpackPlugin(getHTMLplugin('register','注个册啊')),
+    new HtmlWebpackPlugin(getHTMLplugin('user-center','用户中心')),
+    new HtmlWebpackPlugin(getHTMLplugin('user-updatepassword','用户修改密码')),    
   	new CleanWebpackPlugin(['dist']),
     new MiniCssExtractPlugin({
       filename: "css/[name].css",

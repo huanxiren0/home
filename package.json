@@ -34,6 +34,7 @@
     "bable-loader": "0.0.1-security",
     "file-loader": "^2.0.0",
     "font-awesome": "^4.7.0",
+    "hogan.js": "^3.0.2",
     "html-loader": "^0.5.5",
     "install": "^0.12.1",
     "jquery": "^3.3.1",

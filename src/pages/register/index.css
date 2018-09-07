@@ -3,7 +3,7 @@ body{
 }
 .form{
 	width: 300px;
-	height: 300px;
+	height: 450px;
 	background: #e9e9f2;
 	margin:100px auto;
 	padding: 30px;
@@ -29,14 +29,14 @@ body{
 	font-size: 16px;
 
 }
-.form .login-item{
+.form .register-item{
 	height: 40px;
 	margin-bottom: 10px;
 	border: 1px solid #ddd;
 	text-align: left;
 	overflow: hidden;
 }
-.form .login-item i {
+.form .register-item i {
 	display: inline-block;
 	width: 40px;
 	height: 40px;
@@ -48,7 +48,7 @@ body{
 	color:#fff;
 }
 
-.form .login-item input{
+.form .register-item input{
 	width: 248px;
 	height: 40px;
 	border: none;

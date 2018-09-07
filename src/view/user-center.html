@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
 	<%= require('html-loader!./common/header.html')%>
-	<title><%= htmlWebpackPlugin.options.title %> -Ssite电商平台
+	<title><%= htmlWebpackPlugin.options.title %> -飞猪飞MALL电商平台
 </title>
 </head>
 <body>
 	<%= require('html-loader!./common/nav.html')%>
 	<%= require('html-loader!./common/search.html')%>
+	<div class="user-content">
+		<div class="container">
+			<%= require('html-loader!./common/side.html')%>			
+			<div class="content-content">content</div>
+		</div>
+	</div>
 	<%= require('html-loader!./common/footer.html')%>
 </body>
 </html>

@@ -1,0 +1,11 @@
+.user-content{
+	margin-top: 20px;
+}
+
+.user-content .content-content{
+	width:650px;
+	background-color: #fff;
+	margin-left: 20px;
+	float:left;
+	height:650px;	
+}

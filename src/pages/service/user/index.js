@@ -3,12 +3,58 @@ var _util = require('util');
 var _user = {
 	logout:function(success,error){
 		_util.request({
-			url:'http://127.0.0.1:3000/user/logout',
+			url:'/user/logout',
 			method:'get',
 			dataType:'json',
 			success:success,
 			error:error
 		});
-	}
+	},
+	login:function(data,success,error){
+		_util.request({
+			url:'/user/login',
+			method:'post',
+			dataType:'json',
+			data:data,
+			success:success,
+			error:error
+		});
+	},	
+	getInfo:function(success,error){
+		_util.request({
+			url:'/user/userInfo',
+			success:success,
+			error:error
+		});
+	},
+	register:function(data,success,error){
+		_util.request({
+			url:'/user/regist',
+			method:'post',
+			dataType:'json',
+			data:data,
+			success:success,
+			error:error
+		});
+	},
+	checkusername:function(data,success,error){
+		_util.request({
+			url:'/user/checkusername',
+			dataType:'json',
+			data:{username:data},
+			success:success,
+			error:error
+		});
+	},
+	updatepassword:function(data,success,error){
+		_util.request({
+			url:'/user/updatepassword',
+			method:'post',
+			dataType:'json',
+			data:data,
+			success:success,
+			error:error
+		});
+	},	
 };
 module.exports = _user;

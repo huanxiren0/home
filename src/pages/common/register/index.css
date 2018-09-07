@@ -1,0 +1,12 @@
+.logo{
+	height: 75px;
+	line-height: 75px;
+	width:100%;
+	background:#fff;
+}
+.logo-text{
+	color:#FF4400;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 10px;
+}

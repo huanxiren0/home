@@ -1,0 +1,41 @@
+.logo{
+	height: 75px;
+	line-height: 75px;
+	width:100%;
+	background:#fff;
+}
+.logo-text{
+	color:#FF4400;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 10px;
+}
+.logo .logo-item{
+	float:left;
+}
+.logo .search {
+	margin-left:400px;
+}
+.logo .search{
+	width:400px;
+	height:72px;
+	border:1px solid #FFf;
+	line-height: 72px;
+}
+.logo .search .search-item{
+	margin-top:18px;
+	height: 40px;
+}
+.logo .search .search-content{
+	width:274px;
+	float:left;
+	height:38px;
+	padding-left: 10px;
+	border:2px solid #ff4400;
+	border-radius: 3px;
+	outline: none;
+}
+.logo .search .btn-search{
+	float:left;
+	background-color: #FF4400;
+}

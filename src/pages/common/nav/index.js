@@ -10,14 +10,19 @@ var nav = {
 	bindEvent:function(){
 		$('#logout').on('click',function(event) {
 			_user.logout(function(result){
-				console.log(result);
+				window.location.href = '/login.html';
 			},function(err){
 				alert(err);
 			});
 		});
 	},
 	loadUserInfo:function(){
-
+		_user.getInfo(function(userInfo){
+			$('.not-login').hide();
+			$('.userInfo-name').text(userInfo.username);
+		},function(){
+			alert('未登录');
+		});
 	}
 };
 module.exports = nav.init();
