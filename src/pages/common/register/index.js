@@ -46,14 +46,14 @@ var login = {
 			email:email,
 			phone:phone
 		};
-
+		var validate = this.validate(formData);
 		if (validate.status) {
 			$('.error-text')
 			.hide()
 			.find('.errMessage')
 			.text('');
 			_user.register(formData,function(result){
-				window.location.href = '/login.html';
+				window.location.href = '/result.html?type=register';
 			},function(err){
 				alert('aa');
 			});

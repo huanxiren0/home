@@ -1,3 +1,23 @@
 body{
 	background-color: #ccc;
 }
+#table-5{
+	width:500px;
+	height:300px;
+	margin: 40px;
+}
+#table-5 td {
+color: #000;
+}
+#table-5 tr, #table-5 th {
+border-width: 1px;
+border-style: dashed;
+border-color: rgba(245, 43, 0,0.3);
+}
+
+/* Padding and font style */
+#table-5 td, #table-5 th {
+padding: 5px 10px;
+font-size: 16px;
+font-family: Verdana;
+}

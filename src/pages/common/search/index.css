@@ -1,8 +1,9 @@
 .logo{
-	height: 75px;
-	line-height: 75px;
+	height: 100px;
+	line-height: 100px;
 	width:100%;
 	background:#fff;
+	border-bottom: 2px solid #ff4400;
 }
 .logo-text{
 	color:#FF4400;
@@ -23,7 +24,7 @@
 	line-height: 72px;
 }
 .logo .search .search-item{
-	margin-top:18px;
+	margin-top:30px;
 	height: 40px;
 }
 .logo .search .search-content{

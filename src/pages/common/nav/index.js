@@ -12,7 +12,7 @@ var nav = {
 			_user.logout(function(result){
 				window.location.href = '/login.html';
 			},function(err){
-				alert(err);
+				console.log(err);
 			});
 		});
 	},

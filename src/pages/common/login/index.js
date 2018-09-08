@@ -28,7 +28,7 @@ var login = {
 			.find('.errMessage')
 			.text('');
 			_user.login(formData,function(result){
-				window.location.href = '/index.html';
+				window.location.href = _util.getParamUrl('redirect') || '/index.html';
 			},function(err){
 				alert('aa');
 			});

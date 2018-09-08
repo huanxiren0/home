@@ -7,16 +7,7 @@ var _util = {
 			dataType: params.dataType || 'json',
 			data: params.data || '',
 			success:function(result){
-				if (result.code == 0) {
-					params.success(result);
-				}else if (result.code == 10) {
-					_this.doLogin();
-				}else{
-					$('.error-text')
-					.show()
-					.find('.errMessage')
-					.text(result.message);	
-				}
+				params.success(result);
 			},
 			error:function(err){
 				params.error(err);
@@ -26,7 +17,10 @@ var _util = {
 		
 	},
 	doLogin:function(){
-		window.location.reload();
+		window.location.href = '/login.html?redirect='+encodeURIComponent(window.location.href);
+	},
+	goHome:function(){
+		window.location.href = '/index.html';
 	},
 	showErrorMessage:function(err){
 		alert(err);
@@ -48,6 +42,18 @@ var _util = {
 		if (type == 'email') {
 			return /^([A-Za-z0-9_\-\.\u4e00-\u9fa5])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,8})$/.test(value);
 		}		
+	},
+	getParamUrl:function(type){
+		var url = window.location.search.substr(1);
+		var reg = new RegExp('(^|&)'+type+'=([^&]*)(&|$)');
+		var result = url.match(reg);
+		return result ? decodeURIComponent(result[2]) : null;
+	},
+	renderHTML:function(html,list){
+	   var hogan=require('hogan.js');
+	   var compiledTemplate=hogan.compile(html);
+	   var result=compiledTemplate.render(list);
+	   return result;
 	}
 };
 module.exports = _util;

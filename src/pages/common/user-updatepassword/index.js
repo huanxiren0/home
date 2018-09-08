@@ -1,7 +1,7 @@
 require('./index.css');
 var _util = require('util');
 var _user = require('pages/service/user');
-
+var _side = require('pages/common/side/');
 var updatepassword = {
 	init:function(){
 		this.bindEvent();
@@ -9,6 +9,7 @@ var updatepassword = {
 		return this;
 	},
 	bindEvent:function(){
+		_side.loadHtml('user-update-password');
 		var _this = this;
 		$('#updatePassword').on('click',function() {
 			_this.submit();
@@ -28,7 +29,7 @@ var updatepassword = {
 			.find('.errMessage')
 			.text('');
 			_user.updatepassword(formData,function(result){
-				window.location.href = '/login.html';
+				window.location.href = '/result.html?type=usercenter';
 			},function(err){
 				alert('aa');
 			});

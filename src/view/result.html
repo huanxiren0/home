@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%= require('html-loader!./common/header.html')%>
+	<title><%= htmlWebpackPlugin.options.title %> -Ssite电商平台
+</title>
+</head>
+<body>
+	<%= require('html-loader!./common/logo.html')%>
+	<div class="form default hide">
+		<div class="form-tittle">
+			<h2>操作成功</h2>
+		</div>
+		<a href="/index.html" class="btn btn-back">返回首页</a>
+	</div>	
+	<div class="form register hide">
+		<div class="form-tittle">
+			<h2>注册用户成功</h2>
+		</div>
+		<a href="/register.html" class="btn btn-back">继续注册</a>
+		<a href="/login.html" class="btn btn-back">去，登录</a>		
+	</div>
+	<div class="form add hide">
+		<div class="form-tittle">
+			<h2>加入购物车成功</h2>
+		</div>
+		<a href="/index.html" class="btn btn-back">返回首页</a>
+		<a href="/login.html" class="btn btn-back">去，登录</a>		
+	</div>
+	<div class="form usercenter hide">
+		<div class="form-tittle">
+			<h2>修改密码成功</h2>
+		</div>
+		<a href="/index.html" class="btn btn-back">返回首页</a>
+		<a href="/user-center.html" class="btn btn-back">去个人中心</a>		
+	</div>
+	<%= require('html-loader!./common/footer.html')%>
+</body>
+</html>

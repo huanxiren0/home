@@ -1,72 +1,41 @@
 require('./index.css');
 var _util = require('util');
 var _user = require('pages/service/user');
+var template = require('./index.tpl');
 
-var side = {
-	init:function(){
-		this.bindEvent();
-		
-		return this;
-	},
-	bindEvent:function(){
-		var _this = this;
-		$('#loginSubmit').on('click',function() {
-			_this.submit();
-		});
-	},
-	submit:function(){
-		var username = $.trim($('.login-item').find('[name="username"]').val());
-		var password = $.trim($('.login-item').find('[name="password"]').val());
-		var formData = {
-			username:username,
-			password:password
-		};
-		var validate = this.validate(formData);
-		if (validate.status) {
-			$('.error-text')
-			.hide()
-			.find('.errMessage')
-			.text('');
-			_user.login(formData,function(result){
-				window.location.href = '/index.html';
-			},function(err){
-				alert('aa');
-			});
-
-		}else{
-			$('.error-text')
-			.show()
-			.find('.errMessage')
-			.text(validate.message);
+var _side = {
+	list : [
+			{
+				name:'user-center',
+				desc:'用户中心',
+				href:'./user-center.html'
+			},
+			{
+				name:'user-order',
+				desc:'我的订单',
+				href:'./order-list.html',
+			},
+			{
+				name:'user-update-password',
+				desc:'修改密码',
+				href:'./user-updatepassword.html'
+			}
+		],	
+	loadHtml:function(name){
+		var list = this.list;
+		for (var i = 0; i < list.length; i++) {
+			if (list[i].name == name) {
+				list[i].isActive = true;
+			}else{
+				list[i].isActive = false;
+			}
 		}
-	},
-
-	validate:function(formData){
-		var result ={
-			status:false,
-			message:''
-		};
-		if (!_util.valiData(formData.username,'require')) {
-			result.message = '请输入用户名';
-			return result;
-		}
-		if (!_util.valiData(formData.username,'username')) {
-			result.message = '用户名为4到16位（字母，数字，下划线，减号）';
-			return result;
-		}
-		if (!_util.valiData(formData.password,'require')) {
-			result.message = '请输入密码';
-			return result;
-		}
-		if (!_util.valiData(formData.password,'password')) {
-			result.message = '设置密码必须符合由数字,大写字母,小写字母,特殊符,至少其中三种组成密码。';
-			return result;
-		}
-		result.status= true;
-		return result;
+		var template = require('./index.tpl');
+		var html = _util.renderHTML(template,{list:list});
+		$('.content-side').find('ul').html(html);
 	}
 
 
 };
 
-module.exports = side.init();
+module.exports = _side;

@@ -21,6 +21,7 @@ module.exports = {
     index:'./src/pages/index/index.js',
     login:'./src/pages/login/index.js',
     register:'./src/pages/register/index.js',
+    result:'./src/pages/result/index.js',
     'user-center':'./src/pages/usercenter/index.js',
     'user-updatepassword':'./src/pages/user-updatepassword/index.js'
   },
@@ -86,6 +87,13 @@ module.exports = {
                 ]                
             }
         }               
+      },
+      {
+        test:/\.tpl$/,
+        use:[{
+            loader: 'html-loader'
+         }  
+        ]             
       }
              
     ]
@@ -94,6 +102,7 @@ module.exports = {
   	new HtmlWebpackPlugin(getHTMLplugin('index','首页')),
     new HtmlWebpackPlugin(getHTMLplugin('login','用户登录')),
     new HtmlWebpackPlugin(getHTMLplugin('register','注个册啊')),
+    new HtmlWebpackPlugin(getHTMLplugin('result','温馨提示')),    
     new HtmlWebpackPlugin(getHTMLplugin('user-center','用户中心')),
     new HtmlWebpackPlugin(getHTMLplugin('user-updatepassword','用户修改密码')),    
   	new CleanWebpackPlugin(['dist']),
