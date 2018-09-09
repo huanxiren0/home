@@ -1,3 +1,73 @@
 body{
 	background-color: #ccc;
 }
+.keyword-list  .container{
+  height:400px;
+  position: relative;
+}
+.keyword-list .keywords{
+  width:200px;
+  height:400px;
+  text-align: center;
+  background-color: #999;
+  position: absolute;
+  left:0px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.keyword-list .carousel{
+  float:left;
+  margin-left: 40px;
+  width:650px;
+  height:400px;
+  background-color: #fff;
+}
+.keyword-list .keywords .keywords-item{
+  width:180px;
+  height:30px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.keyword-list .keywords .keywords-item a{
+  color:#fff;
+}
+.keyword-list .keywords .keywords-item a:hover{
+  color:#ff4400;
+}
+.levelonecategory{
+  margin-right: 8px;
+}
+.floor{
+  position: absolute;
+  top:420px;
+}
+.floor .floor-item{
+margin-bottom: 20px;
+}
+.floor .floor-title{
+  color:#ff4400;
+  font-size: 20px;
+
+}
+.floor .floor-boxes{
+  width:888px;
+  height:275px;
+  border-top:2px solid #ff4400;
+  margin-top: 15px;
+  background-color: rgba(0,0,0,0.5);
+}
+.floor .floor-box{
+  width:185px;
+  height:239px;
+  padding:18px;
+  border-right:1px solid #ff4400;
+  text-align: center;
+  background-color: #fff;
+  float:left;
+}
+.floor .floor-text{
+  margin-bottom: 18px;
+}
+.floor .floor-box img{
+  width:176px;
+}

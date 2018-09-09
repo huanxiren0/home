@@ -39,7 +39,8 @@ module.exports = {
       util: path.resolve(__dirname, './src/util/'),
       node_modules: path.resolve(__dirname, './node_modules'),
       common:path.resolve(__dirname, './src/pages/common/'),
-      pages:path.resolve(__dirname,'./src/pages')
+      pages:path.resolve(__dirname,'./src/pages'),
+      images:path.resolve(__dirname,'./src/images'),
     }
   },
   externals: {
@@ -69,7 +70,7 @@ module.exports = {
             options: {
               limit:100,
               name: "resource/[name].[ext]"
-                        
+
             }
           }
         ]
@@ -83,28 +84,28 @@ module.exports = {
                presets: ['env','es2015','react','stage-3'],
                 //antd 按需加载
                 plugins: [
-                  ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }] 
-                ]                
+                  ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
+                ]
             }
-        }               
+        }
       },
       {
         test:/\.tpl$/,
         use:[{
             loader: 'html-loader'
-         }  
-        ]             
+         }
+        ]
       }
-             
+
     ]
   },
   plugins: [
   	new HtmlWebpackPlugin(getHTMLplugin('index','首页')),
     new HtmlWebpackPlugin(getHTMLplugin('login','用户登录')),
     new HtmlWebpackPlugin(getHTMLplugin('register','注个册啊')),
-    new HtmlWebpackPlugin(getHTMLplugin('result','温馨提示')),    
+    new HtmlWebpackPlugin(getHTMLplugin('result','温馨提示')),
     new HtmlWebpackPlugin(getHTMLplugin('user-center','用户中心')),
-    new HtmlWebpackPlugin(getHTMLplugin('user-updatepassword','用户修改密码')),    
+    new HtmlWebpackPlugin(getHTMLplugin('user-updatepassword','用户修改密码')),
   	new CleanWebpackPlugin(['dist']),
     new MiniCssExtractPlugin({
       filename: "css/[name].css",
