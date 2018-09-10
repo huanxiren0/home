@@ -23,7 +23,8 @@ module.exports = {
     register:'./src/pages/register/index.js',
     result:'./src/pages/result/index.js',
     'user-center':'./src/pages/usercenter/index.js',
-    'user-updatepassword':'./src/pages/user-updatepassword/index.js'
+    'user-updatepassword':'./src/pages/user-updatepassword/index.js',
+    'list':'./src/pages/list/index.js',
   },
 	//指定出口
 	output:{
@@ -106,6 +107,7 @@ module.exports = {
     new HtmlWebpackPlugin(getHTMLplugin('result','温馨提示')),
     new HtmlWebpackPlugin(getHTMLplugin('user-center','用户中心')),
     new HtmlWebpackPlugin(getHTMLplugin('user-updatepassword','用户修改密码')),
+    new HtmlWebpackPlugin(getHTMLplugin('list','商品')),    
   	new CleanWebpackPlugin(['dist']),
     new MiniCssExtractPlugin({
       filename: "css/[name].css",

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%= require('html-loader!./common/header.html')%>
+	<title><%= htmlWebpackPlugin.options.title %> -Ssite电商平台
+</title>
+</head>
+<body>
+	<%= require('html-loader!./common/nav.html')%>
+	<%= require('html-loader!./common/search.html')%>
+	<div class="order">
+		<div class="container clearfix">
+			<div>
+				<button class="default-order btn active">默认排序</button>
+				<button class="price-order btn">
+					价格排序
+					<i class="fa fa-sort-up up"></i>
+					<i class="fa fa-sort-desc down"></i>
+				</button>
+			</div>
+			<div class="product-list">
+				
+			</div>
+		</div>
+	</div>
+	<%= require('html-loader!./common/footer.html')%>
+</body>
+</html>

@@ -7,11 +7,13 @@ require('util/carousel/');
 var _util = require('util/');
 var template  = require('./keywords.tpl');
 var carousel  = require('./carousel.tpl');
+var floor  = require('./floor.tpl');
 
 var index = {
   init:function(){
     this.loadKeywords();
     this.loadCarousel();
+    this.loadFloor();
     return this;
   },
   list:[
@@ -51,6 +53,36 @@ var index = {
         image:require('images/carousel/carousel_01.jpg')
       },
   ],
+    floor:[
+    {
+      title:'F1 数码',
+      cate:[
+        {text:"手机",categoryId:111,image:require('images/floor/floor_01.jpg')},
+        {text:"荣耀play",categoryId:222,image:require('images/floor/floor_02.jpg')},
+        {text:"荣耀play",categoryId:333,image:require('images/floor/floor_03.jpg')},
+        {text:"荣耀play",categoryId:444,image:require('images/floor/floor_04.jpg')},
+      ]
+    },
+    {
+      title:'F2 家电',
+      cate:[
+        {text:"手机",categoryId:111,image:require('images/floor/floor_01.jpg')},
+        {text:"荣耀play",categoryId:222,image:require('images/floor/floor_02.jpg')},
+        {text:"荣耀play",categoryId:333,image:require('images/floor/floor_03.jpg')},
+        {text:"荣耀play",categoryId:444,image:require('images/floor/floor_04.jpg')},
+      ]
+    },
+    {
+      title:'F3 家居',
+      cate:[
+        {text:"手机",categoryId:111,image:require('images/floor/floor_01.jpg')},
+        {text:"荣耀play",categoryId:222,image:require('images/floor/floor_02.jpg')},
+        {text:"荣耀play",categoryId:333,image:require('images/floor/floor_03.jpg')},
+        {text:"荣耀play",categoryId:444,image:require('images/floor/floor_04.jpg')},
+      ]
+    }
+
+  ],
   loadKeywords:function(){
     var html = _util.renderHTML(template,{list:this.list});
     $('.keywordslist').html(html);
@@ -68,6 +100,10 @@ var index = {
         // var fn = this.className.split(' ')[1];
         unslider.data('unslider')[fn]();
     });
+  },
+  loadFloor:function(){
+    var floorTpl = _util.renderHTML(floor,{floor:this.floor});
+    $('.floor').html(floorTpl);    
   }
 
 };

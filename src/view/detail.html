@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%= require('html-loader!./common/header.html')%>
+	<title><%= htmlWebpackPlugin.options.title %> -Ssite电商平台
+</title>
+</head>
+<body>
+	<%= require('html-loader!./common/nav.html')%>
+	<%= require('html-loader!./common/search.html')%>
+	<div class="product-detail">
+		<div class="container">
+			<div class="product-view">
+				<div class="product-image">
+					<img src="<%= require('images/floor/floor_02.jpg') %>">
+				</div>
+				<ul class="product-imageList">
+					<li>
+						<img src="<%= require('images/floor/floor_02.jpg') %>">			
+					</li>
+					<li>
+						<img src="<%= require('images/floor/floor_02.jpg') %>">			
+					</li>
+					<li>
+						<img src="<%= require('images/floor/floor_02.jpg') %>">			
+					</li>										
+				</ul>
+			</div>
+			<div class="product-info">
+				<h2>Xiaomi/小米 黑鲨游戏手机</h2>
+				<div class="product-price">
+					<span>价格</span>
+					<span class="priceRange">¥3399.00-4199.00</span>
+				</div>
+			</div>
+			<div class="price-num">
+				<span>数量</span>
+				<input type="number" name="">
+				<span>(库存<item>888件</item>)</span>
+			</div>
+			<div class="product-detail">
+				<span>xxxxxxxxxxx</span>
+			</div>
+			<div class="bought">
+				<button class="btn">立即购买</button>
+				<button class="btn">加入购物车</button>
+			</div>
+		</div>
+	</div>
+
+	<%= require('html-loader!./common/footer.html')%>
+</body>
+</html>

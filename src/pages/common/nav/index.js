@@ -20,8 +20,9 @@ var nav = {
 		_user.getInfo(function(userInfo){
 			$('.not-login').hide();
 			$('.userInfo-name').text(userInfo.username);
-		},function(){
-			alert('未登录');
+		},function(err){
+			console.log(err);
+			alert('aasa',err);
 		});
 	}
 };

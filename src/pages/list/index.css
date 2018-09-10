@@ -1,0 +1,47 @@
+body{
+	background-color: #ccc;
+}
+.order{
+  position: relative;
+}
+.order .container{
+  height: 50px;
+  margin-top: 20px;
+}
+button.btn{
+  border-radius:0px;
+  border:1px solid #ff4400;
+  color:#fff;
+}
+button.active{
+  background-color: #ff4400;
+}
+.default-order{
+  position: absolute;
+  left:200px;
+  background-color: #999;  
+}
+.price-order{
+  position: absolute;
+  left:299px;
+  display: inline-block;
+  background-color: #999;
+
+}
+.price-order .up{
+  position: absolute;
+  top:12px;
+}
+.price-order .down{
+  position: absolute;
+  bottom:7px;
+}
+i.active{
+  color:#000;
+}
+.product-list h2{
+  width:200px;
+  height: 100px;
+  color:#ff4400;
+  margin:300px auto;
+} 

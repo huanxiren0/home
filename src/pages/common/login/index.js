@@ -28,7 +28,14 @@ var login = {
 			.find('.errMessage')
 			.text('');
 			_user.login(formData,function(result){
-				window.location.href = _util.getParamUrl('redirect') || '/index.html';
+				if (result.code == 0) {
+					window.location.href = _util.getParamUrl('redirect') || '/index.html';
+				}else{
+					$('.error-text')
+					.show()
+					.find('.errMessage')
+					.text(result.message);					
+				}
 			},function(err){
 				alert('aa');
 			});

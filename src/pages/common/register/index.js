@@ -53,7 +53,15 @@ var login = {
 			.find('.errMessage')
 			.text('');
 			_user.register(formData,function(result){
-				window.location.href = '/result.html?type=register';
+				if (result.code == 0) {
+					window.location.href = '/result.html?type=register';
+
+				}else{
+					$('.error-text')
+					.show()
+					.find('.errMessage')
+					.text(result.message);					
+				}
 			},function(err){
 				alert('aa');
 			});

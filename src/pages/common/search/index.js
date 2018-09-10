@@ -22,11 +22,8 @@ var search = {
 	},
 	submit:function(){
 		var searchData = $.trim($('.search-item').find('[name="search"]').val());
-		if (searchData) {
 			window.location.href = './list.html?keyword='+searchData;
-		}else{
-			_util.goHome();
-		}
+
 	},
 	load:function(){
 		var search = _util.getParamUrl('keyword');
