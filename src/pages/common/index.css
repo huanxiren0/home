@@ -16,7 +16,7 @@ table { border-collapse:collapse; border-spacing:0; }
 .btn {
 	width:100px;
 	height: 42px;
-	background: #f52b00;
+	background: rgba(242,45,0,0.9);
 	line-height: 42px;
 	text-align: center;
 	font-size: 18px;
@@ -25,6 +25,7 @@ table { border-collapse:collapse; border-spacing:0; }
 	border: none;
   	outline: none;
   	cursor: pointer;
+  	color:#fff;
 }
 .hide{
 	display: none;

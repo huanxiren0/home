@@ -5,6 +5,7 @@ require('./index.css');
 
 var _util = require('util/');
 var _product = require('pages/service/product/');
+var productTpl = require('./index.tpl');
 
 var index = {
   init:function(){
@@ -61,9 +62,12 @@ var index = {
           if (productobj.imageList) {
              productobj.image = productobj.imageList.split(',')[0];
           }else{
-              productobj.image = require('');
+              productobj.image = require('images/default.jpg');
           }
+          return productobj;
         });
+        var html = _util.renderHTML(productTpl,{product:product});
+        $('.product-list').html(html);
       }else{
         $('.product-list').html('<h2>商品都跑火星去了</h2>');
       }

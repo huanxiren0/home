@@ -25,6 +25,7 @@ module.exports = {
     'user-center':'./src/pages/usercenter/index.js',
     'user-updatepassword':'./src/pages/user-updatepassword/index.js',
     'list':'./src/pages/list/index.js',
+    'detail':'./src/pages/detail/index.js',    
   },
 	//指定出口
 	output:{
@@ -107,7 +108,8 @@ module.exports = {
     new HtmlWebpackPlugin(getHTMLplugin('result','温馨提示')),
     new HtmlWebpackPlugin(getHTMLplugin('user-center','用户中心')),
     new HtmlWebpackPlugin(getHTMLplugin('user-updatepassword','用户修改密码')),
-    new HtmlWebpackPlugin(getHTMLplugin('list','商品')),    
+    new HtmlWebpackPlugin(getHTMLplugin('list','商品列表')),
+    new HtmlWebpackPlugin(getHTMLplugin('detail','商品详情')),
   	new CleanWebpackPlugin(['dist']),
     new MiniCssExtractPlugin({
       filename: "css/[name].css",
@@ -118,6 +120,14 @@ module.exports = {
     port:3001,
     proxy: {
       '/user': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true
+      },
+      '/product': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true
+      },
+      '/cart': {
         target: 'http://127.0.0.1:3000',
         changeOrigin: true
       }
