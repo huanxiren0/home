@@ -1,7 +1,7 @@
 var _util = require('util');
 
 var _cart = {
-	productList:function(data,success,error){
+	addCart:function(data,success,error){
 		_util.request({
 			url:'/cart',
 			method:'post',
@@ -11,5 +11,13 @@ var _cart = {
 			error:error
 		});
 	},
+	getCart:function(success,error){
+		_util.request({
+			url:'/cart',
+			dataType:'json',
+			success:success,
+			error:error
+		});
+	},	
 };
 module.exports = _cart;

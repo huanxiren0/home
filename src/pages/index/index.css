@@ -1,5 +1,5 @@
 body{
-	background-color: #ccc;
+	background-color: #eee;
 }
 .keyword-list  .container{
   height:400px;
@@ -54,7 +54,7 @@ margin-bottom: 20px;
   height:275px;
   border-top:2px solid #ff4400;
   margin-top: 15px;
-  background-color: rgba(0,0,0,0.5);
+  padding-top: 28px;
 }
 .floor .floor-box{
   width:185px;

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%= require('html-loader!./common/header.html')%>
+	<title><%= htmlWebpackPlugin.options.title %> -Ssite电商平台
+</title>
+</head>
+<body>
+	<%= require('html-loader!./common/nav.html')%>
+	<%= require('html-loader!./common/search.html')%>
+	<%= require('html-loader!./common/index.html')%>
+    <div class="cart">
+      <div class="container clearfix">
+        <div class="cart-box">
+
+        </div>
+      </div>
+    </div>
+	<%= require('html-loader!./common/footer.html')%>
+</body>
+</html>

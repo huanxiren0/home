@@ -25,7 +25,9 @@ module.exports = {
     'user-center':'./src/pages/usercenter/index.js',
     'user-updatepassword':'./src/pages/user-updatepassword/index.js',
     'list':'./src/pages/list/index.js',
-    'detail':'./src/pages/detail/index.js',    
+    'detail':'./src/pages/detail/index.js', 
+    'cart':'./src/pages/cart/index.js', 
+    'order-confirm':'./src/pages/order-confirm/index.js',        
   },
 	//指定出口
 	output:{
@@ -110,6 +112,8 @@ module.exports = {
     new HtmlWebpackPlugin(getHTMLplugin('user-updatepassword','用户修改密码')),
     new HtmlWebpackPlugin(getHTMLplugin('list','商品列表')),
     new HtmlWebpackPlugin(getHTMLplugin('detail','商品详情')),
+    new HtmlWebpackPlugin(getHTMLplugin('cart','购物车')),
+    new HtmlWebpackPlugin(getHTMLplugin('order-confirm','订单中心')),  
   	new CleanWebpackPlugin(['dist']),
     new MiniCssExtractPlugin({
       filename: "css/[name].css",

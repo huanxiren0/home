@@ -18,12 +18,12 @@
 	</div>
 	<div class="price-num">
 		<span class="product-proto">数量</span>
-		<span class="decrease">-</span>
-		<input type="text" name="" value="1" class="totalNum">
-		<span class="increase">+</span>
-		<span class="product-proto stock">(库存<item>{{productNum}}件</item>)</span>
+		<span class="decrease product-math">-</span>
+		<input type="text" name="totalNum" value="1" class="totalNum">
+		<span class="increase product-math">+</span>
+		<span class="product-proto stock">(库存<item>{{productNum}}</item>件)</span>
 	</div>
-	<button class="btn">加入购物车</button>
+	<a class="btn addCart" href="/result.html?type=cart">加入购物车</a>
 </div>
 <div class="product-detail">
 	<ul class="select-product clearfix">

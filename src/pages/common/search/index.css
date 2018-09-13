@@ -13,6 +13,7 @@
 }
 .logo .logo-item{
 	float:left;
+	height: 100px;
 }
 .logo .search {
 	margin-left:400px;
