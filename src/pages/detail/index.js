@@ -12,7 +12,6 @@ var _detail = {
   init:function(){
   	this.onload();
     this.bindEvent();
-    this.addCart();
     return this;
   },
   param:{
@@ -57,27 +56,28 @@ var _detail = {
     });    
   },
   onload:function(){
+    var _this = this;
   	var productId = _util.getParamUrl('productId');
   	_product.productDetail(productId,function(result){
   		if (result.code == 0) {
   			var data = result.data;
-  			if (data.imageList) {
-  				data.mainImage = data.imageList.split(',')[0];
-  				data.images = data.imageList.split(',');
-  			}else{
-  				data.mainImage = require('images/default.jpg'); 
-          data.images = [require('images/default.jpg')];  				
-  			}
-  			var html = _util.renderHTML(productTpl,data);
-  			$('.product .container').html(html);
-        $($('.product').find('.product-imageList')[0]).addClass('active');
+        _this.renderDetail(data);
   		}
   	},function(err){
   		console.log(err);
   	});
   },
-  addCart:function(){
-    
+  renderDetail:function(data){
+    if (data.imageList) {
+      data.mainImage = data.imageList.split(',')[0];
+      data.images = data.imageList.split(',');
+    }else{
+      data.mainImage = require('images/default.jpg'); 
+      data.images = [require('images/default.jpg')];          
+    }
+    var html = _util.renderHTML(productTpl,data);
+    $('.product .container').html(html);
+    $($('.product').find('.product-imageList')[0]).addClass('active');    
   }
 };
 

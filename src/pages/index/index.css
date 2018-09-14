@@ -3,15 +3,13 @@ body{
 }
 .keyword-list  .container{
   height:400px;
-  position: relative;
 }
 .keyword-list .keywords{
   width:200px;
   height:400px;
   text-align: center;
   background-color: #999;
-  position: absolute;
-  left:0px;
+  float:left;
   padding: 15px;
   box-sizing: border-box;
 }
@@ -39,7 +37,7 @@ body{
 }
 .floor{
   position: absolute;
-  top:420px;
+  top:555px;
 }
 .floor .floor-item{
 margin-bottom: 20px;

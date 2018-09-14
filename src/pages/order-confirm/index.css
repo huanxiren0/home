@@ -1,120 +1,140 @@
-body{
-	background-color: #ccc;
+.shipping-box{
+	background: #fff;
+	padding: 20px;
+	margin-bottom: 20px;
 }
-.cart-title li,
-.cart-item li,
-.cart-footer li{
-  float: left;
+.shipping-box .shopping-item{
+	width: 270px;
+	float: left;
+	padding: 20px;
+	margin-right: 30px;
+	border: 4px dashed #ddd;
 }
-.cart-title,
-.cart-item,
-.cart-footer{
-  padding-left: 10px;
-  box-sizing: border-box;
+.shipping-box .shopping-title{
+	border-bottom: 1px dashed #ddd;
+	font-size: 14px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
-
-.product-select{
-  width: 6%;
+.shipping-box .shopping-detail{
+	height: 60px;
+	line-height: 30px;
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
-.product-info{
-  width: 54%;
+.shipping-box .shopping-footer .link{
+	float: right;
+	text-align: right;
+	color: #888;
+	margin-right: 10px;
+	visibility: hidden;
 }
-.product-price{
-  width: 10%;
+.shipping-box .shopping-item.active{
+	border: 4px dashed orange;
 }
-.product-count{
-  width: 10%;
+.shipping-box .shopping-item:hover .shopping-footer .link{
+	visibility: visible;
 }
-.product-totalPrice{
-  width: 10%;
+.shipping-box .product-box{
+	background: #fff;
+	padding: 20px;
 }
-.product-opreation{
-  width: 10%;
-}
-
-.cart-title {
-  height: 40px;
-  line-height: 40px;
-  background-color: #ddd;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.cart-item {
-  height: 80px;
-  line-height: 80px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-}
-
-.cart-item .product-info img{
-  width: 60px;
-  height: 60px;
-  vertical-align: middle;
-}
-
-.cart-item .product-count .count-input{
-  width: 40px;
-  height: 20px;
-  line-height: 20px;
-  text-align: center;
-  outline: none;
-  border: 1px solid #ddd;
-  margin-left: -1px;
-}
-.cart-item .product-count .count-btn{
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  text-align: center;
-  border: 1px solid #ddd; 
-  background-color: #fff;
-  cursor: pointer;
-  user-select: none;
-}
-.cart-item .product-count .count-btn.plus{
-  margin-left: -1px;
-}
-.cart-item  .product-totalPrice{
-  font-size: 14px;
-  font-weight: bold;
-}
-.cart-item .product-opreation .delete-one{
-  cursor: pointer;
-  user-select: none;
+.shipping-box .shopping-add{
+	cursor: pointer;
+	height: 82px;
+	width: 270px;
+	float: left;
+	padding: 20px;
+	border: 4px dashed #ddd;
+	text-align: center;
+	line-height: 41px;
+	font-size: 24px;
+	color: #ddd;
 }
 
-.cart-footer{
-  height: 60px;
-  line-height: 60px;
-  background-color: #ddd;
-  color: #666;  
+.product-item {
+	height: 80px;
+	line-height: 80px;
+	margin-bottom: 15px;
+	border: 1px solid #ddd;
 }
-.cart-footer .product-opreation .delete-selected{
-  cursor: pointer;
-  user-select: none;
+/*商品列表*/
+.product-box .product-select{
+	width: 6%;
 }
-.cart-footer .product-submit{
-  float: right;
+.product-box .product-info{
+	width: 70%;
 }
-.cart-footer .product-submit .btn-submit{
-  height: 60px;
-  line-height: 60px;
-  width: 100px; 
+.product-box .product-price{
+	width: 10%;
 }
-.cart-footer .product-submit  .total-price{
-  display: inline-block;
-  line-height: 60px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #f21;
+.product-box .product-count{
+	width: 10%;
 }
-.cart-footer .product-submit .total-price-text{
-  position: relative;
-  top:-2px;
+.product-box .product-totalPrice{
+	width: 10%;
 }
-.cart-box .gohome-btn{
-  display: block;
-  margin: 20px auto;
+.product-box .gocart-btn{
+	margin: 0 auto;
+}
+
+
+/*弹窗*/
+.modal{
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0,0,0,0.4);
+}
+.modal .modal-container{
+	width: 300px;
+	margin: 100px auto;
+	border: 1px solid #ccc;
+	background: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+.modal .modal-header{
+	height: 40px;
+	line-height: 30px;
+	border-bottom: 1px solid #ddd;
+	font-size: 14px;
+	color: #333;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.modal .modal-title{
+	float: left;
+}
+.modal .close-icon{
+	float: right;
+	margin-top: 10px;
+}
+.modal .close-icon:hover{
+	color: #666;
+}
+.modal .modal-body{
+	color: #666;
+}
+.modal .modal-body .form{
+	padding: 10px 20px;
+}
+.modal .modal-body .form .form-item.city-item{
+	border: none;
+}
+.modal-body .form .form-item.city-item .form-lable{
+	border: 1px solid #ddd;
+}
+.modal-body .form .form-item.city-item select{
+	width: 110px;
+	height: 30px;
+	/*margin-right: 10px;*/
 }

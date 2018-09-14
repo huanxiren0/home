@@ -54,6 +54,9 @@ var _util = {
 	   var compiledTemplate=hogan.compile(html);
 	   var result=compiledTemplate.render(list);
 	   return result;
+	},
+	confirm:function(data){
+		return window.confirm(data);
 	}
 };
 module.exports = _util;

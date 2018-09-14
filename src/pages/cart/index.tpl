@@ -45,7 +45,7 @@
 		￥{{product.productPrice}}
 	</li>
 	<li class="product-count">
-		<span class="count-btn minus">-</span><input type="text" value="{{count}}" class="count-input" /><span class="count-btn plus">+</span>
+		<span class="count-btn minus">-</span><input type="text" value="{{boughtCount}}" class="count-input" data-stock ="{{product.productNum}}" /><span class="count-btn plus">+</span>
 	</li>
 	<li class="product-totalPrice">
 		￥{{totalPrice}}
@@ -75,7 +75,7 @@
 	<li class="product-submit">
 		<span class="total-price-text">总价:</span>
 	 	<span class="total-price">￥{{AllPrice}}</span>
-	 	<a href="javascript:;" class="btn btn-submit">去结算</a>
+	 	<a href="/order-confirm.html" class="btn btn-submit">去结算</a>
 	</li>
 </ul>
 {{/notEmpty}}
