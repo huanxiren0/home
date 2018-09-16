@@ -9,6 +9,9 @@ a { text-decoration:none; }
 a:hover { color:#ff4400; }
 button, input, select, textarea { font-size:100%; }
 table { border-collapse:collapse; border-spacing:0; }
+input{
+	outline: none;
+}
 .container{
 	width:1220px;
 	margin: 0 auto;

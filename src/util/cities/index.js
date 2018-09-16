@@ -43,7 +43,7 @@ var _cities = {
             return provinces;
         },
         getCities:function(provinceName){
-            return this.cityInfo[provinceName] || []
+            return this.cityInfo[provinceName] || [];
         }
 };
 

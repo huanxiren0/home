@@ -1,0 +1,51 @@
+var _util = require('util');
+
+var _order = {
+	addShipping:function(data,success,error){
+		_util.request({
+			url:'/user/addShipping',
+			method:'post',
+			data:data,
+			dataType:'json',
+			success:success,
+			error:error
+		});
+	},
+	getShipping:function(success,error){
+		_util.request({
+			url:'/user/getShipping',
+			dataType:'json',
+			success:success,
+			error:error
+		});
+	},
+	deleteShipping:function(data,success,error){
+		_util.request({
+			url:'/user/deleteShipping',
+			data:data,
+			dataType:'json',
+			success:success,
+			error:error
+		});
+	},
+	editOneShipping:function(data,success,error){
+		_util.request({
+			url:'/user/editShipping',
+			data:data,
+			dataType:'json',
+			success:success,
+			error:error
+		});
+	},	
+	editShipping:function(data,success,error){
+		_util.request({
+			url:'/user/editShipping',
+			data:data,
+			method:'post',
+			dataType:'json',
+			success:success,
+			error:error
+		});
+	},
+};
+module.exports = _order;
